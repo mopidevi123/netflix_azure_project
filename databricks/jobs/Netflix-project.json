@@ -1,0 +1,154 @@
+{
+  "created_time": 1789130440122,
+  "creator_user_name": "mopidevipravallika123_gmail.com#ext#@mopidevipravallika123gmail.onmicrosoft.com",
+  "job_id": 995931510020924,
+  "run_as_user_name": "mopidevipravallika123_gmail.com#ext#@mopidevipravallika123gmail.onmicrosoft.com",
+  "settings": {
+    "email_notifications": {
+      "no_alert_for_skipped_runs": false
+    },
+    "format": "MULTI_TASK",
+    "max_concurrent_runs": 1,
+    "name": "Netflix_project",
+    "performance_target": "PERFORMANCE_OPTIMIZED",
+    "queue": {
+      "enabled": true
+    },
+    "tasks": [
+      {
+        "disabled": false,
+        "email_notifications": {},
+        "existing_cluster_id": "0909-063200-pwnt20m3",
+        "notebook_task": {
+          "notebook_path": "/Workspace/Users/mopidevipravallika123_gmail.com#ext#@mopidevipravallika123gmail.onmicrosoft.com/Netflix_Project/Silver_Root",
+          "source": "WORKSPACE"
+        },
+        "run_if": "ALL_SUCCESS",
+        "task_key": "silver_root",
+        "timeout_seconds": 0,
+        "webhook_notifications": {}
+      },
+      {
+        "depends_on": [
+          {
+            "task_key": "silver_root"
+          }
+        ],
+        "disabled": false,
+        "email_notifications": {},
+        "existing_cluster_id": "0909-063200-pwnt20m3",
+        "notebook_task": {
+          "notebook_path": "/Workspace/Users/mopidevipravallika123_gmail.com#ext#@mopidevipravallika123gmail.onmicrosoft.com/Netflix_Project/Clean_netflix_cast",
+          "source": "WORKSPACE"
+        },
+        "run_if": "ALL_SUCCESS",
+        "task_key": "cleaned_cast",
+        "timeout_seconds": 0,
+        "webhook_notifications": {}
+      },
+      {
+        "depends_on": [
+          {
+            "task_key": "silver_root"
+          }
+        ],
+        "disabled": false,
+        "email_notifications": {},
+        "existing_cluster_id": "0909-063200-pwnt20m3",
+        "notebook_task": {
+          "notebook_path": "/Workspace/Users/mopidevipravallika123_gmail.com#ext#@mopidevipravallika123gmail.onmicrosoft.com/Netflix_Project/Clean_netflix_categories",
+          "source": "WORKSPACE"
+        },
+        "run_if": "ALL_SUCCESS",
+        "task_key": "cleaned_category",
+        "timeout_seconds": 0,
+        "webhook_notifications": {}
+      },
+      {
+        "depends_on": [
+          {
+            "task_key": "silver_root"
+          }
+        ],
+        "disabled": false,
+        "email_notifications": {},
+        "existing_cluster_id": "0909-063200-pwnt20m3",
+        "notebook_task": {
+          "notebook_path": "/Workspace/Users/mopidevipravallika123_gmail.com#ext#@mopidevipravallika123gmail.onmicrosoft.com/Netflix_Project/Clean_netflix_countries",
+          "source": "WORKSPACE"
+        },
+        "run_if": "ALL_SUCCESS",
+        "task_key": "cleaned_country",
+        "timeout_seconds": 0,
+        "webhook_notifications": {}
+      },
+      {
+        "depends_on": [
+          {
+            "task_key": "silver_root"
+          }
+        ],
+        "disabled": false,
+        "email_notifications": {},
+        "existing_cluster_id": "0909-063200-pwnt20m3",
+        "notebook_task": {
+          "notebook_path": "/Workspace/Users/mopidevipravallika123_gmail.com#ext#@mopidevipravallika123gmail.onmicrosoft.com/Netflix_Project/Clean_netflix_directors",
+          "source": "WORKSPACE"
+        },
+        "run_if": "ALL_SUCCESS",
+        "task_key": "cleaned_directors",
+        "timeout_seconds": 0,
+        "webhook_notifications": {}
+      },
+      {
+        "depends_on": [
+          {
+            "task_key": "silver_root"
+          }
+        ],
+        "disabled": false,
+        "email_notifications": {},
+        "existing_cluster_id": "0909-063200-pwnt20m3",
+        "notebook_task": {
+          "notebook_path": "/Workspace/Users/mopidevipravallika123_gmail.com#ext#@mopidevipravallika123gmail.onmicrosoft.com/Netflix_Project/Clean_netflix_titles",
+          "source": "WORKSPACE"
+        },
+        "run_if": "ALL_SUCCESS",
+        "task_key": "cleaned_title",
+        "timeout_seconds": 0,
+        "webhook_notifications": {}
+      },
+      {
+        "depends_on": [
+          {
+            "task_key": "cleaned_title"
+          },
+          {
+            "task_key": "cleaned_cast"
+          },
+          {
+            "task_key": "cleaned_directors"
+          },
+          {
+            "task_key": "cleaned_category"
+          },
+          {
+            "task_key": "cleaned_country"
+          }
+        ],
+        "disabled": false,
+        "email_notifications": {},
+        "existing_cluster_id": "0909-063200-pwnt20m3",
+        "notebook_task": {
+          "notebook_path": "/Workspace/Users/mopidevipravallika123_gmail.com#ext#@mopidevipravallika123gmail.onmicrosoft.com/Netflix_Project/gold",
+          "source": "WORKSPACE"
+        },
+        "run_if": "ALL_SUCCESS",
+        "task_key": "gold",
+        "timeout_seconds": 0
+      }
+    ],
+    "timeout_seconds": 0,
+    "webhook_notifications": {}
+  }
+}
