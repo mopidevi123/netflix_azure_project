@@ -1,0 +1,15 @@
+{
+	"name": "prav-datafactory",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "5d0727c4-e015-475c-88d8-2570d4fbbd47",
+		"tenantId": "a6301a67-a7a9-4804-a744-f393aa30fcf1"
+	}
+}
